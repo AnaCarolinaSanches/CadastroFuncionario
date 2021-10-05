@@ -1,0 +1,51 @@
+//Teste de requisições REST - Funcionario
+
+@baseURL = http://localhost:4000/api
+
+@cadastro = 123456789
+###
+// GET - Lista todos os funcionario
+GET {{baseURL}}/funcionario
+Content-Type: application/json
+
+###
+// GET - Lista apenas funcionario pelo cadastro
+GET {{baseURL}}/funcionario/{{cadastro}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo funcionario
+POST {{baseURL}}/funcionario
+Content-Type: application/json
+
+{
+    "cadastro": 1234567891,
+    "nome": "José",
+    "cargo": "Metalurgico",
+    "genero": "Masculino",
+    "nascimento": "1973-12-03",
+    "rg": "12.345.587-1",
+    "email": "teste@teste8",
+    "celular": "15-99415-5184"
+}
+
+###
+// PUT - Altera um aluno existente
+PUT {{baseURL}}/funcionario
+Content-Type: application/json
+
+{
+    "cadastro":123456789,
+    "nome":"José",
+    "cargo":"Metalurgico",
+    "genero":"Masculino",
+    "nascimento": "2002-04-25",
+    "rg": "12.345.587-1",
+    "email": "teste@teste3",
+    "celular": "15-99415-5124"
+}
+
+###
+// DELETE - Apaga um funcionario através do cadastro
+DELETE {{baseURL}}/funcionario/{{cadastro}}
+Content-Type: application/json
